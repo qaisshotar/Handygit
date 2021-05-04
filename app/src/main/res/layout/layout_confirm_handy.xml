@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_title"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="12dp"
+        android:text="Select your service"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/text_title"
+            android:layout_margin="20dp"
+            android:columnCount="2"
+            android:rowCount="3">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/paniter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_format_paint_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paniter"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/plumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_plumbing_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plumber"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/electrican"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_electrical_services_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Electrican"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/house_cleaning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_cleaning_services_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="House Cleaning"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/carpenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_carpenter_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carpenter"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/wash_machine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_local_laundry_service_24"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repairing washing machines"
+                        android:textAlignment="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </GridLayout>
+
+
+
+</RelativeLayout>

@@ -22,4 +22,7 @@
     <string name="permission_require">Location permission required</string>
     <string name="workers_not_found">Worker not found !</string>
     <string name="not_found_key">Not found worker with key</string>
+    <string name="title_activity_request_worker">Map</string>
+    <string name="confirm_service">Confirm Service</string>
+    <string name="confirm_handy">Confirm Handy</string>
 </resources>
