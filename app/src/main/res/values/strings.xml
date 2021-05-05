@@ -25,4 +25,14 @@
     <string name="title_activity_request_worker">Map</string>
     <string name="confirm_service">Confirm Service</string>
     <string name="confirm_handy">Confirm Handy</string>
+    <string name="choose_service">Choose Service Type</string>
+    <string name="confirm_spinner">Confirm Service</string>
+
+    <string-array name="spinner">
+        <item>Choose Service Type</item>
+        <item>Painter</item>
+        <item>Wood Worker</item>
+        <item>Electrician</item>
+        <item>Plumber</item>
+    </string-array>
 </resources>

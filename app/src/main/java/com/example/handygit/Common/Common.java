@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.util.ArraySet;
+import android.widget.TextView;
 
 import androidx.core.app.NotificationCompat;
 
@@ -94,4 +95,6 @@ public class Common {
     public static String buildName(String firstName, String lastName) {
         return new StringBuilder(firstName).append("").append(lastName).toString();
     }
+
+
 }

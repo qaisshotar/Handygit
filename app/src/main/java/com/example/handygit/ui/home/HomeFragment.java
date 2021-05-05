@@ -14,7 +14,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.handygit.Callback.IFirebaseFaildListener;
 import com.example.handygit.Callback.IFirebaseUserinfoListener;
 import com.example.handygit.Common.Common;
+import com.example.handygit.Model.GeoQueryModel;
 import com.example.handygit.Model.WorkerGeoModel;
 import com.example.handygit.Model.WorkerInfoMode;
 import com.example.handygit.R;
@@ -64,17 +68,28 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 public class HomeFragment extends Fragment implements OnMapReadyCallback, LocationListener, IFirebaseFaildListener, IFirebaseUserinfoListener {
+
+    @BindView(R.id.activity_main)
+    SlidingUpPanelLayout slidingUpPanelLayout;
+    @BindView(R.id.txt_welcome)
+    TextView txt_welcome;
+
+    private AutoCompleteTextView autoCompleteTextView;
+
 
     private GoogleMap mMap;
     private HomeViewModel homeViewModel;
@@ -115,12 +130,26 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
 
 
         init();
+        initViews(root);
+
         mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         return root;
     }
 
+    private void initViews(View root) {
+        ButterKnife.bind(this,root);
+
+
+
+
+    }
+
     private void init() {
+
+
+
+
 
         iFirebaseFaildListener = this;
         iFirebaseUserinfoListener = this;
@@ -243,8 +272,17 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Locati
                             @Override
                             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                                 //Have new driver
-                               // GeoQueryModel geoQueryModel = dataSnapshot.getValue(GeoQueryModel.class);
-
+                                GeoQueryModel geoQueryModel = dataSnapshot.getValue(GeoQueryModel.class);
+                                GeoLocation geoLocation = new GeoLocation(geoQueryModel.getL().get(0),
+                                        geoQueryModel.getL().get(1));
+                                WorkerGeoModel workerGeoModel = new WorkerGeoModel(dataSnapshot.getKey(),
+                                        geoLocation);
+                                Location newWorkerLocation = new Location("");
+                                newWorkerLocation.setLatitude(geoLocation.latitude);
+                                newWorkerLocation.setLongitude(geoLocation.longitude);
+                                float newDistance = location.distanceTo(newWorkerLocation)/1000; // in km
+                                if(newDistance <= LIMIT_RANGE)
+                                    findWorkerKey(workerGeoModel);// worker in range
                             }
 
                             @Override

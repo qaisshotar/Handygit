@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class GeoQueryModel {
     private String g;
-    //private ArrayList<Double> 1;
+    private ArrayList <Double> l;
 
     public GeoQueryModel() {
     }
@@ -17,4 +17,11 @@ public class GeoQueryModel {
         this.g = g;
     }
 
+    public ArrayList<Double> getL() {
+        return l;
+    }
+
+    public void setL(ArrayList<Double> l) {
+        this.l = l;
+    }
 }
