@@ -27,6 +27,7 @@
     <string name="confirm_handy">Confirm Handy</string>
     <string name="choose_service">Choose Service Type</string>
     <string name="confirm_spinner">Confirm Service</string>
+    <string name="finding_your_worker">Finding your worker</string>
 
     <string-array name="spinner">
         <item>Choose Service Type</item>
@@ -35,4 +36,5 @@
         <item>Electrician</item>
         <item>Plumber</item>
     </string-array>
+    <string name="title_activity_request_driver">Map</string>
 </resources>

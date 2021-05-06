@@ -1,95 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.sothree.slidinguppanel.SlidingUpPanelLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:appc="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="bottom"
-    tools:context=".HomeActivity"
-    appc:umanoPanelHeight="220dp"
-    appc:umanoShadowHeight="20dp">
 
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
 
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@android:color/white">
+        tools:context=".MapsActivity" />
 
 
-        <TextView
-            android:id="@+id/txt_welcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/choose_service"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:background="@android:color/darker_gray"/>
-        
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="10"
-            android:orientation="horizontal">
-            
-            
-            <Spinner
-                android:id="@+id/service"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="9"
-                android:entries="@array/spinner"
-                >
-
-            </Spinner>
-
-            
-            
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:foreground="?attr/selectableItemBackground">
-
-
-            <Button
-                android:id="@+id/confirm_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="9"
-                android:text="@string/confirm_spinner"/>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-</com.sothree.slidinguppanel.SlidingUpPanelLayout>
-
-
-
+</FrameLayout>

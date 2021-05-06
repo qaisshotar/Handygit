@@ -1,5 +1,6 @@
 package com.example.handygit.Common;
 
+import android.animation.ValueAnimator;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -94,6 +95,18 @@ public class Common {
 
     public static String buildName(String firstName, String lastName) {
         return new StringBuilder(firstName).append("").append(lastName).toString();
+    }
+
+   public static ValueAnimator valueAnimate(long duration, ValueAnimator.AnimatorUpdateListener listener){
+
+        ValueAnimator va = ValueAnimator.ofFloat(0,1000);
+        va.setDuration(duration);
+        va.addUpdateListener(listener);
+        va.setRepeatCount(ValueAnimator.INFINITE);
+        va.setRepeatMode(ValueAnimator.RESTART);
+
+        va.start();
+        return va;
     }
 
 
